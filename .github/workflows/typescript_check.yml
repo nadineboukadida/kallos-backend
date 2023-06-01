@@ -1,0 +1,27 @@
+name: Typescript check
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Install Node.js & caching
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+        cache: 'npm'
+
+    - name: Install Dependencies
+      run: |
+        npm ci
+    - name: Compile TypeScript
+      run: npm run build
+
+    - name: Type checking
+      run: npm run type-check
+
