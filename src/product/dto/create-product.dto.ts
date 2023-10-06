@@ -5,6 +5,8 @@ export class CreateProductDto {
   @IsString()
   name: string;
   @IsString()
+  secondaryName: string;
+  @IsString()
   description: string;
   @IsString()
   secondaryDescription1: string;
