@@ -7,7 +7,7 @@ export class CreateProductDto {
   @IsString()
   description: string;
   @IsString()
-  secondaryDescription: string;
+  secondaryDescription2: string;
   @IsNumber()
   price: number;
   category: Category;
